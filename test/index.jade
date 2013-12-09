@@ -22,7 +22,7 @@ append scripts
       var tooltip = new Tooltip(document.querySelector(selector));
 
       tooltip.show();
-      tooltip.to(this).right(10).center();
+      tooltip.to(this).top(10);
     });
 
     document.querySelector('[data-hover-show-tooltip]').addEventListener('mouseleave', function () {
@@ -38,7 +38,7 @@ append scripts
 
 append content
   a#trigger-one.tooltip-trigger(href="#", data-tip-content="Hello world", data-tip-default-position="right") Test One
-  a#trigger-two.tooltip-trigger(href="#", data-hover-show-tooltip="#tip-one") Test Two
+  a#trigger-two.tooltip-trigger(href="#", data-hover-show-tooltip="#tip-one", data-top-default-position="top") Test Two
 
   p
 
