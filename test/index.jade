@@ -1,0 +1,77 @@
+extends layout/default
+
+append styles
+  :stylus
+    #trigger-one
+      position absolute
+      left 200px
+      top 200px
+
+    #trigger-two
+      position absolute
+      top 300px
+      left 300px
+
+append scripts
+  script
+    var Tooltip = require('tooltip');
+    var triggers = document.querySelectorAll('.tooltip-trigger');
+
+    document.querySelector('[data-hover-show-tooltip]').addEventListener('mouseenter', function () {
+      var selector = this.getAttribute('data-hover-show-tooltip');
+      var tooltip = new Tooltip(document.querySelector(selector));
+
+      tooltip.show();
+      tooltip.to(this).right(10).center();
+    });
+
+    document.querySelector('[data-hover-show-tooltip]').addEventListener('mouseleave', function () {
+      var selector = this.getAttribute('data-hover-show-tooltip');
+      var tooltip = new Tooltip(document.querySelector(selector));
+
+      tooltip.hide();
+    });
+
+    function id(id) {
+      return document.getElementById(id);
+    }
+
+append content
+  a#trigger-one.tooltip-trigger(href="#", data-tip-content="Hello world", data-tip-default-position="right") Test One
+  a#trigger-two.tooltip-trigger(href="#", data-hover-show-tooltip="#tip-one") Test Two
+
+  p
+
+  #tip-one.ui.tooltip.right
+    .content
+      .text Hello world
+      .text Hello world
+      .text Hello world
+      .text Hello world
+    .arrow
+
+  p
+
+  #tip-two.ui.tooltip.left
+    .content
+      .text Hello world
+      .text Hello world
+      .text Hello world
+    .arrow
+
+  p
+
+  #tip-three.ui.tooltip.top
+    .content
+      .text Hello world
+      .text Hello world
+      .text Hello world
+    .arrow
+
+  p
+
+  #tip-four.ui.tooltip.bottom
+    .content
+      .text Hello world
+      .text Hello world
+    .arrow

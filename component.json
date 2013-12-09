@@ -1,0 +1,21 @@
+{
+  "name": "tooltip",
+  "repo": "base-ui/tooltip",
+  "description": "Base tooltip component",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "shallker-wang/eventy": "*",
+    "shallker/position": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "lib/tooltip.js"
+  ],
+  "styles": [
+    "css/tooltip.css"
+  ]
+}
