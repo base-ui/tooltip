@@ -5,7 +5,9 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
+    "component/jquery": "*",
     "shallker-wang/eventy": "*",
+    "component/domify": "*",
     "shallker/position": "*"
   },
   "development": {},
@@ -13,7 +15,8 @@
   "main": "index.js",
   "scripts": [
     "index.js",
-    "lib/tooltip.js"
+    "lib/tooltip.js",
+    "template.js"
   ],
   "styles": [
     "css/tooltip.css"
