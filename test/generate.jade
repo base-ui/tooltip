@@ -1,0 +1,34 @@
+extends layout/default
+
+append styles
+  :stylus
+    #trigger
+      position absolute
+      left 200px
+      top 200px
+
+append scripts
+  script
+    var Tooltip = require('tooltip');
+    var trigger = document.getElementById('trigger');
+
+    trigger.addEventListener('mouseenter', onMouseenter);
+
+    function onMouseenter(mouseenter) {
+      var content = this.getAttribute('data-tip-content');
+      var defaultPosition = this.getAttribute('data-tip-default-position');
+      var tooltip = new Tooltip;
+
+      tooltip.html(content);
+      tooltip.to(this).right(12);
+
+      trigger.addEventListener('mouseleave', onMouseleave);
+
+      function onMouseleave(mouseleave) {
+        trigger.removeEventListener('mouseleave', onMouseleave);
+        document.body.removeChild(tooltip.el);
+      }
+    }
+
+append content
+  a#trigger.tooltip-trigger(href="#", data-tip-content="Hello world", data-tip-default-position="right") Test One
