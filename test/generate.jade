@@ -20,7 +20,7 @@ append scripts
       var tooltip = new Tooltip;
 
       tooltip.html(content);
-      tooltip.to(this).right(12);
+      tooltip.append().show().to(this).right(12);
 
       trigger.addEventListener('mouseleave', onMouseleave);
 
