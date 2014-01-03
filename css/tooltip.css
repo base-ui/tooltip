@@ -5,6 +5,9 @@
 .ui.tooltip.show {
   display: table;
 }
+.ui.tooltip.fixed {
+  position: fixed;
+}
 .ui.tooltip.right >.arrow,
 .ui.tooltip.left >.arrow {
   top: 50%;
