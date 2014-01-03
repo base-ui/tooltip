@@ -6,9 +6,8 @@
   "keywords": [],
   "dependencies": {
     "component/jquery": "*",
-    "shallker-wang/eventy": "*",
     "component/domify": "*",
-    "shallker/position": "*"
+    "shallker-wang/eventy": "*",
   },
   "development": {},
   "license": "MIT",
