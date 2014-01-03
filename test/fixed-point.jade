@@ -15,7 +15,7 @@ append scripts
 
       tooltip.appendTo(document.body);
       tooltip.text('Top');
-      tooltip.at(100, 100).top().fixed();
+      tooltip.fixed().at(100, 100).top();
     })();
 
     (function two() {
@@ -23,7 +23,7 @@ append scripts
 
       tooltip.appendTo(document.body);
       tooltip.text('Right');
-      tooltip.at(200, 200).right().fixed();
+      tooltip.fixed().at(200, 200).right();
     })();
 
     (function three() {
@@ -31,7 +31,7 @@ append scripts
 
       tooltip.appendTo(document.body);
       tooltip.text('Bottom');
-      tooltip.at(300, 300).bottom().fixed();
+      tooltip.fixed().at(300, 300).bottom();
     })();
 
     (function four() {
@@ -39,7 +39,7 @@ append scripts
 
       tooltip.appendTo(document.body);
       tooltip.text('Left');
-      tooltip.at(400, 400).left().fixed();
+      tooltip.fixed().at(400, 400).left();
     })();
 
 append content
