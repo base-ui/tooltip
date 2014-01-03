@@ -7,7 +7,7 @@
   "dependencies": {
     "component/jquery": "*",
     "component/domify": "*",
-    "shallker-wang/eventy": "*",
+    "shallker-wang/eventy": "*"
   },
   "development": {},
   "license": "MIT",
