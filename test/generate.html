@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/build.css"><style type="text/css">#trigger {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+</style>
+  </head>
+  <body><a id="trigger" href="#" data-tip-content="Hello world" data-tip-default-position="right" class="tooltip-trigger">Test One</a>
+    <script src="../build/build.js"></script>
+    <script>
+      var Tooltip = require('tooltip');
+      
+      document.getElementById('trigger').addEventListener('mouseenter', function onMouseenter(mouseenterEvent) {
+        var tooltip = new Tooltip;
+        
+        tooltip.html(this.getAttribute('data-tip-content'));
+        tooltip.appendTo(document.body);
+        tooltip.to(this).top(2);
+        
+        this.addEventListener('mouseleave', function onMouseleave(mouseleaveEvent) {
+          tooltip.remove();
+          this.removeEventListener('mouseleave', onMouseleave);
+        });
+      });
+      
+    </script>
+  </body>
+</html>

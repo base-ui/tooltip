@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/build.css"><style type="text/css">body {
+  height: 2000px;
+}
+.square {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+}
+.square.fixed {
+  position: fixed;
+}
+.square.one {
+  top: 100px;
+  left: 100px;
+}
+.square.two {
+  top: 200px;
+  left: 200px;
+}
+.square.three {
+  top: 300px;
+  left: 300px;
+}
+.square.four {
+  top: 400px;
+  left: 400px;
+}
+</style>
+  </head>
+  <body>
+    <div class="square fixed one"></div>
+    <div class="square fixed two"></div>
+    <div class="square fixed three"></div>
+    <div class="square fixed four"></div>
+    <script src="../build/build.js"></script>
+    <script>
+      var Tooltip = require('tooltip');
+      
+      (function one() {
+        var square = document.querySelector('.square.one.fixed');
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Top');
+        tooltip.to(square).top(2).fixed();
+      })();
+      
+      (function two() {
+        var square = document.querySelector('.square.two.fixed');
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Right');
+        tooltip.to(square).right(4).fixed();
+      })();
+      
+      (function three() {
+        var square = document.querySelector('.square.three.fixed');
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Bottom');
+        tooltip.to(square).bottom(6).fixed();
+      })();
+      
+      (function four() {
+        var square = document.querySelector('.square.four.fixed');
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Left');
+        tooltip.to(square).left(8).fixed();
+      })();
+      
+    </script>
+  </body>
+</html>

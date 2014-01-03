@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/build.css"><style type="text/css">body {
+  height: 2000px;
+}
+</style>
+  </head>
+  <body>
+    <script src="../build/build.js"></script>
+    <script>
+      var Tooltip = require('tooltip');
+      var tooltip;
+      
+      (function one() {
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Top');
+        tooltip.at(100, 100).top().fixed();
+      })();
+      
+      (function two() {
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Right');
+        tooltip.at(200, 200).right().fixed();
+      })();
+      
+      (function three() {
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Bottom');
+        tooltip.at(300, 300).bottom().fixed();
+      })();
+      
+      (function four() {
+        var tooltip = new Tooltip;
+        
+        tooltip.appendTo(document.body);
+        tooltip.text('Left');
+        tooltip.at(400, 400).left().fixed();
+      })();
+      
+    </script>
+  </body>
+</html>
