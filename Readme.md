@@ -9,12 +9,30 @@
 
     $ component install base-ui/tooltip
 
+## Quick Start
+```javascript
+var Tooltip = require('tooltip');
+var tooltip = new Tooltip;
+
+tooltip.appendTo(document.body);
+tooltip.text('Hello world');
+tooltip.to(document.getElementById('target')).top();
+```
+
 ## API
 ### tooltip
+#### .at(Number targetX, Number targetY)
 #### .to(Element target)
-#### .at(Number pageX, Number pageY)
 #### .show()
 #### .hide()
+#### .top(Number offset)
+#### .left(Number offset)
+#### .bottom(Number offset)
+#### .right(Number offset)
+#### .text(String text)
+#### .html(String html)
+#### .fixed()
+#### .absolute()
 
 
 ## License
