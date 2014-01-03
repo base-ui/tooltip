@@ -10,25 +10,19 @@ append styles
 append scripts
   script
     var Tooltip = require('tooltip');
-    var trigger = document.getElementById('trigger');
 
-    trigger.addEventListener('mouseenter', onMouseenter);
-
-    function onMouseenter(mouseenter) {
-      var content = this.getAttribute('data-tip-content');
-      var defaultPosition = this.getAttribute('data-tip-default-position');
+    document.getElementById('trigger').addEventListener('mouseenter', function onMouseenter(mouseenterEvent) {
       var tooltip = new Tooltip;
 
-      tooltip.html(content);
-      tooltip.append().show().to(this).right(12);
+      tooltip.html(this.getAttribute('data-tip-content'));
+      tooltip.appendTo(document.body);
+      tooltip.to(this).top(2);
 
-      trigger.addEventListener('mouseleave', onMouseleave);
-
-      function onMouseleave(mouseleave) {
-        trigger.removeEventListener('mouseleave', onMouseleave);
-        document.body.removeChild(tooltip.el);
-      }
-    }
+      this.addEventListener('mouseleave', function onMouseleave(mouseleaveEvent) {
+        tooltip.remove();
+        this.removeEventListener('mouseleave', onMouseleave);
+      });
+    });
 
 append content
   a#trigger.tooltip-trigger(href="#", data-tip-content="Hello world", data-tip-default-position="right") Test One

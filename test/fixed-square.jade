@@ -1,0 +1,77 @@
+extends layout/default
+
+append styles
+  :stylus
+    body
+      height 2000px
+
+    .square
+      width 40px
+      height 40px
+      background-color #000
+
+      &.fixed
+        position fixed
+
+      &.one
+        top 100px
+        left 100px
+
+      &.two
+        top 200px
+        left 200px
+
+      &.three
+        top 300px
+        left 300px
+
+      &.four
+        top 400px
+        left 400px
+
+append scripts
+  script
+    var Tooltip = require('tooltip');
+    var tooltip;
+
+    (function one() {
+      var square = document.querySelector('.square.one.fixed');
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Top');
+      tooltip.to(square).top(2).fixed();
+    })();
+
+    (function two() {
+      var square = document.querySelector('.square.two.fixed');
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Right');
+      tooltip.to(square).right(4).fixed();
+    })();
+
+    (function three() {
+      var square = document.querySelector('.square.three.fixed');
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Bottom');
+      tooltip.to(square).bottom(6).fixed();
+    })();
+
+    (function four() {
+      var square = document.querySelector('.square.four.fixed');
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Left');
+      tooltip.to(square).left(8).fixed();
+    })();
+
+append content
+  .square.fixed.one
+  .square.fixed.two
+  .square.fixed.three
+  .square.fixed.four

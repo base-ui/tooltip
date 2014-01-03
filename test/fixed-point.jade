@@ -1,0 +1,45 @@
+extends layout/default
+
+append styles
+  :stylus
+    body
+      height 2000px
+
+append scripts
+  script
+    var Tooltip = require('tooltip');
+    var tooltip;
+
+    (function one() {
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Top');
+      tooltip.at(100, 100).top().fixed();
+    })();
+
+    (function two() {
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Right');
+      tooltip.at(200, 200).right().fixed();
+    })();
+
+    (function three() {
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Bottom');
+      tooltip.at(300, 300).bottom().fixed();
+    })();
+
+    (function four() {
+      var tooltip = new Tooltip;
+
+      tooltip.appendTo(document.body);
+      tooltip.text('Left');
+      tooltip.at(400, 400).left().fixed();
+    })();
+
+append content
