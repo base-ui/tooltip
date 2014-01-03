@@ -34,6 +34,8 @@ tooltip.to(document.getElementById('target')).top();
 #### .fixed()
 #### .absolute()
 
+## Test
+http://base-ui.github.io/tooltip/test/fixed-square.html   
 
 ## License
 
